@@ -1,5 +1,5 @@
 # bootstrap3-jlayouts
-Series of jLayout overrides for Joomla templates that use bootstrap 3 &amp; font awsome.
+Series of Fabrik jLayout overrides for Joomla templates that use bootstrap 3 &amp; font awsome.
 
 Tested against https://www.joomlart.com/joomla/templates/purity-iii
 
