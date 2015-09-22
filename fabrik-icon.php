@@ -7,13 +7,25 @@
 defined('JPATH_BASE') or die;
 
 $d = $displayData;
+$props = isset($d->properties) ? $d->properties : '';
 
-switch (trim($d->icon)) {
-	case 'icon-list-view':
+$test = str_replace('icon-', '', trim($d->icon));
+
+switch ($test) {
+	case 'list-view':
 		$d->icon = 'fa-list';
 		break;
-	case 'icon-feed':
+	case 'feed':
 		$d->icon = 'fa-rss';
+		break;
+	case 'picture':
+		$d->icon = 'fa-picture-o';
+		break;
+	case 'delete':
+		$d->icon = 'fa-times';
+		break;
+	case 'expand-2':
+		$d->icon = 'fa-expand';
 		break;
 	default :
 		$d->icon = str_replace('icon-', 'fa-', $d->icon);
@@ -21,4 +33,4 @@ switch (trim($d->icon)) {
 }
 ?>
 
-<span class="fa <?php echo $d->icon;?>" <?php echo $d->properties;?>></span>
+<span class="fa <?php echo $d->icon;?>" <?php echo $props;?>></span>
