@@ -10,19 +10,19 @@ $props = isset($d->properties) ? $d->properties : '';
 
 /**
  * Handle cases where additional classes are in the $d->icon string, like the calendar
- * uses "icon-clock timeButton".  So boil $d->icon down to just the icon-foo, then
- * add the rest of the parts back after testing for replacement.
+ * uses "icon-clock timeButton".  Also handle multiple icon-foo, like "icon-spinner icon-spin"
  */
 
-$parts = explode(' ', $d->icon);
+$iconParts = explode(' ', trim($d->icon));
+$spareParts = array();
 
-foreach ($parts as $key => $part) {
-	if (strstr($part, 'icon-')) {
-		unset($parts[$key]);
-		$d->icon = $part;
+foreach ($iconParts as $key => $part) {
+	if (!strstr($part, 'icon-')) {
+		unset($iconParts[$key]);
+		$spareParts[] = $part;
 	}
 	else if (empty($part)) {
-		unset($parts[$key]);
+		unset($iconParts[$key]);
 	}
 }
 
@@ -30,41 +30,47 @@ foreach ($parts as $key => $part) {
  * Now test for any icon names that need changing to achieve Font Awesomeness.
  */
 
-$test = str_replace('icon-', '', trim($d->icon));
+foreach ($iconParts as $key => $part)
+{
 
-switch ($test) {
-	case 'list-view':
-		$d->icon = 'fa-list';
-		break;
-	case 'feed':
-		$d->icon = 'fa-rss';
-		break;
-	case 'picture':
-		$d->icon = 'fa-picture-o';
-		break;
-	case 'delete':
-		$d->icon = 'fa-times';
-		break;
-	case 'expand-2':
-		$d->icon = 'fa-expand';
-		break;
-	case 'clock':
-		$d->icon = 'fa-clock-o';
-		break;
-	default :
-		$d->icon = str_replace('icon-', 'fa-', $d->icon);
-		break;
+	$test = str_replace('icon-', '', trim($part));
+
+	switch ($test) {
+		case 'list-view':
+			$iconParts[$key] = 'fa-list';
+			break;
+		case 'feed':
+			$iconParts[$key] = 'fa-rss';
+			break;
+		case 'picture':
+			$iconParts[$key] = 'fa-picture-o';
+			break;
+		case 'delete':
+			$iconParts[$key] = 'fa-times';
+			break;
+		case 'expand-2':
+			$iconParts[$key] = 'fa-expand';
+			break;
+		case 'clock':
+			$iconParts[$key] = 'fa-clock-o';
+			break;
+		default :
+			$iconParts[$key] = str_replace('icon-', 'fa-', $part);
+			break;
+	}
 }
 
+$d->icon = implode(' ', $iconParts);
+
 /**
- * Add any additional classes back
+ * Add any additional non-icon classes back
  */
 
-if (!empty($parts))
+if (!empty($spareParts))
 {
-	$d->icon .= ' ' . implode(' ', $parts);
+	$d->icon .= ' ' . implode(' ', $spareParts);
 }
 
 ?>
 
-<span class="fa <?php echo $d->icon;?>" <?php echo $props;?>></span>
+<span data-isicon="true" class="fa <?php echo $d->icon;?>" <?php echo $props;?>></span>
