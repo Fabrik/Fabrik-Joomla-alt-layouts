@@ -4,9 +4,7 @@ defined('JPATH_BASE') or die;
 $d         = $displayData;
 $labelText = FText::_($d->label);
 $labelText = $labelText == '' ? '&nbsp;' : $labelText;
-$l         = $d->j3 ? '' : $labelText;
-$l .= $d->icons;
-$l .= $d->j3 ? $labelText : '';
+$l  = $d->icons . $labelText;
 $tip = '';
 
 if ($d->tipText !== '')
