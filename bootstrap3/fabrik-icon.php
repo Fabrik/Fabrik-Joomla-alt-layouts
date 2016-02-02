@@ -54,6 +54,9 @@ foreach ($iconParts as $key => $part)
 		case 'clock':
 			$iconParts[$key] = 'fa-clock-o';
 			break;
+		case 'question-sign':
+			$iconParts[$key] = 'fa-question-circle';
+			break;
 		default :
 			$iconParts[$key] = str_replace('icon-', 'fa-', $part);
 			break;
