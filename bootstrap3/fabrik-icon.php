@@ -57,6 +57,12 @@ foreach ($iconParts as $key => $part)
 		case 'question-sign':
 			$iconParts[$key] = 'fa-question-circle';
 			break;
+		case 'next':
+ 			$iconParts[$key] = 'fa-angle-right';
+ 			break;
+ 		case 'previous':
+ 			$iconParts[$key] = 'fa-angle-left';
+ 			break;
 		default :
 			$iconParts[$key] = str_replace('icon-', 'fa-', $part);
 			break;
