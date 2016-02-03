@@ -8,7 +8,7 @@ bootstrap3
 
 Tested against https://www.joomlart.com/joomla/templates/purity-iii
 
-To use, copy the files in the bootstrap folder in 
+To use, copy the files in the bootstrap3 folder to 
 
 > /templates/purity_iii/html/layouts/com_fabrik
 
