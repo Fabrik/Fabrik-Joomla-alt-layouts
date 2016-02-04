@@ -63,6 +63,12 @@ foreach ($iconParts as $key => $part)
  		case 'previous':
  			$iconParts[$key] = 'fa-angle-left';
  			break;
+ 		case 'plus':
+ 			$iconParts[$key] = 'fa-plus';
+ 			break;
+		case 'minus':
+ 			$iconParts[$key] = 'fa-minus';
+ 			break;
 		default :
 			$iconParts[$key] = str_replace('icon-', 'fa-', $part);
 			break;
