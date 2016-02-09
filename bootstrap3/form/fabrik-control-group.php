@@ -13,8 +13,16 @@ $d = $displayData;
 
 $span = str_replace('span', '', $d->span);
 $d->span = 'col-xs-12 col-sm-' . trim($span);
+$class = explode(' ', $d->class);
+
+if (in_array('error', $class))
+{
+	$class[] = 'has-error';
+
+}
+$class[] = 'form-group';
 ?>
 
-<div class="control-group <?php echo $d->class;?> <?php echo $d->span;?>" <?php echo $d->style;?>>
+<div class="control-group <?php echo implode(' ', $class);?> <?php echo $d->span;?>" <?php echo $d->style;?>>
 <?php echo $d->row;?>
 </div>
