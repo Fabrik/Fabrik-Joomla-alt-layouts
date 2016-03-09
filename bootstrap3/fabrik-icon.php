@@ -66,6 +66,9 @@ foreach ($iconParts as $key => $part)
 		case 'eye-open':
 			$iconParts[$key] = 'fa-eye';
 			break;
+		case 'lightning':
+			$iconParts[$key] = 'fa-bolt';
+			break;			
 		default :
 			$iconParts[$key] = str_replace('icon-', 'fa-', $part);
 			break;
