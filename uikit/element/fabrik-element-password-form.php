@@ -30,13 +30,12 @@ $pw2Attributes = implode("\n", $pw2Attributes);
 if ($d->showStrengthMeter) :
 	?>
 	<div>Veiligheid van dit wachtwoord:</div>
-
 	<?php
 	if ($d->j3) :
 		?>
 		<div class="strength progress progress-striped" style="width:50%;"></div>
 	<?php
-	else:
+	else :
 		?>
 		<span class="strength"></span>
 	<?php
