@@ -66,6 +66,9 @@ foreach ($iconParts as $key => $part)
 		case 'eye-open':
 			$iconParts[$key] = 'fa-eye';
 			break;
+		case 'lightning':
+			$iconParts[$key] = 'fa-bolt';
+			break;
 		case 'checkmark':
 			$iconParts[$key] = 'fa-check';
 			break;
