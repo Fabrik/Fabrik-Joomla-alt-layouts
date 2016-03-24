@@ -68,7 +68,10 @@ foreach ($iconParts as $key => $part)
 			break;
 		case 'lightning':
 			$iconParts[$key] = 'fa-bolt';
-			break;			
+			break;
+		case 'checkmark':
+			$iconParts[$key] = 'fa-check';
+			break;				
 		default :
 			$iconParts[$key] = str_replace('icon-', 'fa-', $part);
 			break;
