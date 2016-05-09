@@ -64,24 +64,20 @@ endforeach;
 				<h3><?php echo Html::icon('icon-filter', Text::_('COM_FABRIK_FILTER')); ?></h3>
 			</div>
 			<div class="modal-body">
-				<table class="table table-stripped">
-					<?php
-					echo implode("\n", Html::bootstrapGrid($cols, $d->filterCols));
-					?>
-				</table>
+				<?php
+				echo implode("\n", Html::bootstrapGrid($cols, $d->filterCols));
+				?>
 			</div>
 			<div class="modal-footer">
-				<a href="#" class="btn" data-dismiss="modal">Close</a>
 				<?php
 				if ($d->showClearFilters) : ?>
-					<a class="btn clearFilters" href="#">
-						<?php echo Html::icon('icon-refresh', Text::_('COM_FABRIK_CLEAR')); ?>
-					</a>
+					<input type="button" class="btn btn-link clearFilters"
+						value="<?php echo Text::_('COM_FABRIK_CLEAR'); ?>" />
 				<?php endif ?>
 				<?php
 				if ($d->filter_action != 'onchange') :
 					?>
-					<input type="button" data-dismiss="modal" class="btn btn-primary fabrik_filter_submit"
+					<input type="button" data-dismiss="modal" class="btn btn-default fabrik_filter_submit"
 						value="<?php echo Text::_('COM_FABRIK_GO'); ?>" name="filter">
 					<?php
 				endif;
@@ -90,7 +86,5 @@ endforeach;
 		</div>
 
 	</div>
-
-
 
 </div>
