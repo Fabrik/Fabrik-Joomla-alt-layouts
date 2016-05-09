@@ -12,9 +12,10 @@ if ($d->tipText !== '')
 	switch ($d->tipOpts->position)
 	{
 		default;
-		case 'top-left':
+		case 'left':
 			$placement = 'left';
 			break;
+		case 'top-left':
 		case 'top-right':
 		case 'top-left':
 		case 'top':
