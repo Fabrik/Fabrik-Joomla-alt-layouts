@@ -8,7 +8,7 @@ $d    = $displayData;
 $from = $d->from;
 $to   = $d->to;
 
-$d->calOpts = array('class' => 'form-control');
+$d->calOpts = array('class' => 'fabrik_filter form-control');
 
 $calOpts = ArrayHelper::toString($d->calOpts);
 
