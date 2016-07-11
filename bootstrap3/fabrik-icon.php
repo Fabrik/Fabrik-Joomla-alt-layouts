@@ -72,6 +72,12 @@ foreach ($iconParts as $key => $part)
 		case 'checkmark':
 			$iconParts[$key] = 'fa-check';
 			break;
+		case 'cancel':
+			$iconParts[$key] = 'fa-times';
+			break;
+		case 'remove':
+			$iconParts[$key] = 'fa-times';
+			break;
 		default :
 			$iconParts[$key] = str_replace('icon-', 'fa-', $part);
 			break;

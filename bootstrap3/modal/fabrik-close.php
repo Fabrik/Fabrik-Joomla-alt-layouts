@@ -7,6 +7,6 @@ defined('JPATH_BASE') or die;
 
 $d = $displayData;
 ?>
-<a href="#" class="closeFabWin">
+<a href="#" class="closeFabWin" data-role="close">
 	<span class="fa fa-times-circle"></span>
 </a>
