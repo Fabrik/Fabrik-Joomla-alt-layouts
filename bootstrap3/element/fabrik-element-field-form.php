@@ -2,7 +2,7 @@
 
 defined('JPATH_BASE') or die;
 
-use Fabrik\Helpers\ArrayHelper;
+use Joomla\Utilities\ArrayHelper;
 // Add span with id so that element fxs work.
 $d = $displayData;
 
