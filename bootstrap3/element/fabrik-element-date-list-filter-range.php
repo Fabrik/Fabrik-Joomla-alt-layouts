@@ -1,16 +1,13 @@
 <?php
 defined('JPATH_BASE') or die;
 
-use Fabrik\Helpers\ArrayHelper;
-use Fabrik\Helpers\Text;
-
 $d    = $displayData;
 $from = $d->from;
 $to   = $d->to;
 
 $d->calOpts = array('class' => 'fabrik_filter form-control');
 
-$calOpts = ArrayHelper::toString($d->calOpts);
+$calOpts = FArrayHelper::toString($d->calOpts);
 
 $from->img = '<a href="#" id ="' . $from->id . '_cal_img" class="calendarbutton">' . $from->img . '</a>';
 $to->img   = '<a href="#" id ="' . $to->id . '_cal_img" class="calendarbutton">' . $to->img . '</a>';
@@ -31,7 +28,7 @@ else :
 	?>
 	<div class="fabrikDateListFilterRange row">
 		<div class="col-xs-6">
-			<?php echo Text::_('COM_FABRIK_DATE_RANGE_BETWEEN') . ' '; ?>
+			<?php echo FText::_('COM_FABRIK_DATE_RANGE_BETWEEN') . ' '; ?>
 			<div class="input-group">
 				<input type="text" name="<?php echo $from->name; ?>" id="<?php echo $from->id; ?>"
 					value="<?php echo $from->value; ?>"<?php echo $calOpts; ?> />
@@ -41,7 +38,7 @@ else :
 			</div>
 		</div>
 		<div class="col-xs-6">
-			<?php echo Text::_('COM_FABRIK_DATE_RANGE_AND') . ' '; ?>
+			<?php echo FText ::_('COM_FABRIK_DATE_RANGE_AND') . ' '; ?>
 			<div class="input-group">
 				<input type="text" name="<?php echo $to->name; ?>" id="<?php echo $to->id; ?>"
 					value="<?php echo $to->value; ?>"<?php echo $calOpts; ?> />
