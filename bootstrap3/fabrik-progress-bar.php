@@ -10,6 +10,8 @@ $d = $displayData;
 $klass = '';
 $stripped = isset($d->stripped) && $d->stripped === true ? 'progress-bar-striped': '';
 $animated = isset($d->animated) && $d->animated === true ? 'active' : '';
+$extraClass = isset($d->extraClass) ? $d->extraClass : '';
+$extraStyle = isset($d->extraStyle) ? $d->extraStyle : '';
 $value = isset($d->value) ? (int) $d->value : 0;
 
 if (isset($d->context)) {
@@ -30,7 +32,7 @@ if (isset($d->context)) {
 	}
 }
 ?>
-<div class="progress">
+<div class="progress <?php echo $extraClass;?>" style="<?php echo $extraStyle; ?>">
 	<div class="progress-bar bar <?php echo $klass;?> <?php echo $stripped; ?> <?php echo $animated;?>" role="progressbar"
 		aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $value;?>%;">
 	</div>
