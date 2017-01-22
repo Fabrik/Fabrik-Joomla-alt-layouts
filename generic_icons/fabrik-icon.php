@@ -6,7 +6,21 @@
  * icon-delete.  This means you either have to change 'delete' to 'remove' in the settings
  * for the Delete Icon for all your lists ... or you can use this layout to map icon-delete to icon-remove.
  *
- * See below for instructions on how to modify this file to add new name mappings.
+ * To use this file, either ...
+ *
+ * Follow the instructions at:
+ *
+ * https://docs.joomla.org/J3.x:How_to_use_the_Template_Manager
+ *
+ * ... to create a fabrik-icon.php at the top level of the com_fabrik overrides,
+ * and paste the content of this file into it.
+ *
+ * ... or ...
+ *
+ * Use ftp, and manually create the ./templates/<your site template/html/overides/com_fabrik
+ * folder, ftp this file to it, and edit as required.
+ *
+ * See below ("MODIFY HERE") for instructions on how to modify this file to add new name mappings.
  */
 
 defined('JPATH_BASE') or die;
@@ -15,6 +29,8 @@ $d = $displayData;
 $props = isset($d->properties) ? $d->properties : '';
 
 /**
+ * DON'T TOUCH THIS PART OF THE CODE!
+ *
  * Handle cases where additional classes are in the $d->icon string, like the calendar
  * uses "icon-clock timeButton".  Also handle multiple icon-foo, like "icon-spinner icon-spin"
  */
@@ -33,6 +49,8 @@ foreach ($iconParts as $key => $part) {
 }
 
 /**
+ * MODIFY HERE
+ *
  * Now test for any icon names that need changing.  To add a new one, simply add
  * a new case for it inside this switch statement. Copy and paste the 'delete' case,
  * and change the names accordingly.
@@ -47,11 +65,18 @@ foreach ($iconParts as $key => $part)
 		case 'delete':
 			$iconParts[$key] = 'icon-remove';
 			break;
+		case 'something':
+			$iconParts[$key] = 'icon-somethingelse';
+			break;
 		default :
 			$iconParts[$key] = trim($part);
 			break;
 	}
 }
+
+/**
+ * DON"T TOUCH THIS PART OF THE CODE
+ */
 
 $d->icon = implode(' ', $iconParts);
 
