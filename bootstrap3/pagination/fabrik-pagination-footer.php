@@ -10,8 +10,9 @@
  */
 
 $d = $displayData;
-?>
 
+if ($d->showNav) :
+?>
 <div class="list-footer">
 	<div class="limit">
 		<div class="input-group">
@@ -26,10 +27,23 @@ $d = $displayData;
 			<div class="input-group-addon">
 				<small>
 					<?php echo $d->pagesCounter; ?>
-				</small></div>
+				</small>
+			</div>
 		</div>
 	</div>
 	<?php echo $d->links; ?>
 	<input type="hidden" name="limitstart<?php echo $d->id; ?>" id="limitstart<?php echo $d->id; ?>" value="<?php echo $d->value; ?>" />
 </div>
-
+	<?php
+else :
+	if ($d->showTotal) : ?>
+		<div class="list-footer">
+			<div class="input-group-addon">
+				<small>
+					<?php echo $d->pagesCounter; ?>
+				</small>
+			</div>
+		</div>
+		<?php
+	endif;
+endif;
