@@ -11,8 +11,12 @@
 defined('JPATH_BASE') or die;
 $d = $displayData;
 
-$span = str_replace('span', '', $d->span);
-$d->span = 'col-xs-12 col-sm-' . trim($span);
+if (strstr($d->span, 'span'))
+{
+	$span    = str_replace('span', '', $d->span);
+	$d->span = 'col-xs-12 col-sm-' . trim($span);
+}
+
 $class = explode(' ', $d->class);
 
 if (in_array('error', $class))
