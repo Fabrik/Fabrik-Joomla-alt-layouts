@@ -32,7 +32,7 @@ else
 </style>
 
 <div class="fabrikModalBg uk-modal uk-open" style="">
-	<div id="<?php echo $d->id; ?>" class="<?php echo $windowClass; ?>">
+	<div id="<?php echo $d->id; ?>" class="<?php echo $windowClass; ?>" data-draggable="true">
 		<div class="modal-header">
 			<h3 class="<?php echo $handleClass; ?>" data-role="title">
 				<?php echo $d->title; ?>
