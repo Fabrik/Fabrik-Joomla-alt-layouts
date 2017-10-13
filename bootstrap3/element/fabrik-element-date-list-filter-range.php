@@ -1,13 +1,15 @@
 <?php
 defined('JPATH_BASE') or die;
 
+use Joomla\Utilities\ArrayHelper;
+
 $d    = $displayData;
 $from = $d->from;
 $to   = $d->to;
 
 $d->calOpts = array('class' => 'fabrik_filter form-control');
 
-$calOpts = FArrayHelper::toString($d->calOpts);
+$calOpts = ArrayHelper::toString($d->calOpts);
 
 $from->img = '<a href="#" id ="' . $from->id . '_cal_img" class="calendarbutton">' . $from->img . '</a>';
 $to->img   = '<a href="#" id ="' . $to->id . '_cal_img" class="calendarbutton">' . $to->img . '</a>';
