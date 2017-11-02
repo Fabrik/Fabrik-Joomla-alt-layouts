@@ -80,6 +80,16 @@ foreach ($iconParts as $key => $part)
 
 $d->icon = implode(' ', $iconParts);
 
+/*
+ * Some code just needs the icon name itself (eg. passing to JS code so it knows what icon class to add/remove,
+ * like in the rating element.
+ */
+if ($d->nameOnly)
+{
+	echo $d->icon;
+	return;
+}
+
 /**
  * Add any additional non-icon classes back
  */
