@@ -78,6 +78,9 @@ foreach ($iconParts as $key => $part)
 		case 'remove':
 			$iconParts[$key] = 'fa-times';
 			break;
+		case 'star-empty':
+			$iconParts[$key] = 'fa-star-o';
+			break;
 		default :
 			$iconParts[$key] = str_replace('icon-', 'fa-', $part);
 			break;
