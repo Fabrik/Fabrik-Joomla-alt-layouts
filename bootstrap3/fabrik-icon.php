@@ -93,7 +93,7 @@ $d->icon = implode(' ', $iconParts);
  * Some code just needs the icon name itself (eg. passing to JS code so it knows what icon class to add/remove,
  * like in the rating element.
  */
-if ($d->nameOnly)
+if (isset($d->nameOnly) && $d->nameOnly)
 {
 	echo $d->icon;
 	return;
