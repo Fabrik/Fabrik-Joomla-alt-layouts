@@ -29,8 +29,8 @@ $d->items = (array) $d->items;
 
 foreach ($d->items as $i => $s)
 {
-	$endLine = ($i !== 0 && (($i) % $d->columns[1] == 0));
-	$newLine = ($i % $d->columns[1] == 0);
+	$endLine = ($i !== 0 && (($i) % $d->columns == 0));
+	$newLine = ($i % $d->columns == 0);
 
 	if ($endLine)
 	{
