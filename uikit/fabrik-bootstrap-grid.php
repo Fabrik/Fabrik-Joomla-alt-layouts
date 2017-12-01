@@ -13,6 +13,8 @@ use Joomla\Utilities\ArrayHelper;
 $d = $displayData;
 $responsive = array('col-xs-', 'col-sm-', 'col-md-', 'col-lg-');
 $d->columns = (array) $d->columns;
+
+/*
 $span = array();
 
 foreach ($d->columns as $i => $c) {
@@ -21,6 +23,7 @@ foreach ($d->columns as $i => $c) {
 
 $span = implode(' ', $span);
 $span = '';
+*/
 
 $i    = 0;
 $grid = array();
