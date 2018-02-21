@@ -1,6 +1,8 @@
 <?php
 defined('JPATH_BASE') or die;
 
+use Joomla\Utilities\ArrayHelper;
+
 $d         = $displayData;
 $labelText = FText::_($d->label);
 $labelText = $labelText == '' ? '&nbsp;' : $labelText;
