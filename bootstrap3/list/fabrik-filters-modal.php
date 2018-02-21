@@ -70,8 +70,10 @@ endforeach;
 			</div>
 			<div class="modal-footer">
 				<?php
-				if ($d->showClearFilters) : ?>
-					<input type="button" class="btn btn-link clearFilters"
+				if ($d->showClearFilters) :
+					$clearFiltersClass = $d->gotOptionalFilters ? "btn btn-link clearFilters hasFilters" : "btn btn-link clearFilters";
+				?>
+					<input type="button" class="<?php echo $clearFiltersClass; ?>"
 						value="<?php echo Text::_('COM_FABRIK_CLEAR'); ?>" />
 				<?php endif ?>
 				<?php
