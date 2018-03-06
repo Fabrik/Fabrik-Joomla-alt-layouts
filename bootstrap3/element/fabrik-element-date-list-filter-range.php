@@ -1,6 +1,8 @@
 <?php
 defined('JPATH_BASE') or die;
 
+use Fabrik\Helpers\ArrayHelper;
+
 $d    = $displayData;
 $from = $d->from;
 $to   = $d->to;
