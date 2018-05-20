@@ -31,11 +31,11 @@ $footer = isset($d->footer) ? $d->footer : '';
 		</h3>
 		<?php if (!$d->modal && $d->expandable !== false) : ?>
 			<a class="expand" href="#" data-role="expand">
-				<span class="icon-full-screen icon-expand"></span>
+				<span class="fa fa-expand"></span>
 			</a>
 		<?php endif; ?>
 		<a href="#" class="closeFabWin" data-role="close">
-			<span class="icon-cancel icon-remove-sign"></span>
+			<span class="fa fa-times"></span>
 		</a>
 	</div>
 	<div class="contentWrapper">
